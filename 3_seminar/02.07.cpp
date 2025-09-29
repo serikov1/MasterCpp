@@ -38,5 +38,7 @@ int main()
     std::cout << "Среднее арифметическое: " << average << "\n";
     std::cout << "Стандартное отклонение: " << std << "\n";
     
+    delete[] array;
+    
     return 0;
 }
