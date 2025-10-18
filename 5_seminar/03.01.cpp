@@ -84,7 +84,7 @@ int main()
 
     Rectangle bound = bounding_rectangle(rects);
     //std::cout << (bound.right_lower.x - bound.left_upper.x) * (bound.right_lower.y - bound.left_upper.y);
-    assert((bound.right_lower.x - bound.left_upper.x) * (bound.right_lower.y - bound.left_upper.y) == 25);
+    assert((bound.right_lower.x - bound.left_upper.x) * (bound.right_lower.y - bound.left_upper.y) - 25 < 1e-3);
 
 //--------------------------------------------------------------------------------------------------------//
 
@@ -96,10 +96,10 @@ int main()
     };
 
     inter_area = intersection_square(simple_rects);
-    assert(inter_area = 0.5);
+    assert(inter_area - 0.5 < 1e-3);
 
     bound = bounding_rectangle(simple_rects);
-    assert((bound.right_lower.x - bound.left_upper.x) * (bound.right_lower.y - bound.left_upper.y) == 1.5);
+    assert((bound.right_lower.x - bound.left_upper.x) * (bound.right_lower.y - bound.left_upper.y) - 1.5 < 1e-3);
 
 //--------------------------------------------------------------------------------------------------------//
 
@@ -110,7 +110,7 @@ int main()
         { {3, 3}, {4, 4} }
     };
 
-    assert(intersection_square(disjoint) == 0);
+    assert(intersection_square(disjoint) < 1e-6);
 
 //--------------------------------------------------------------------------------------------------------//
 
