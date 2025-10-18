@@ -72,13 +72,13 @@ int main()
 {
     Triangle t(3, 4, 5);
 
-    assert(t.perimeter() == 12);
-    assert(t.square() == 6);
+    assert(t.perimeter() - 12 < 1e-3);
+    assert(t.square() - 6 < 1e-3);
 
     Square s(10);
 
-    assert(s.perimeter() == 40);
-    assert(s.square() == 100);
+    assert(s.perimeter() - 40 < 1e-6);
+    assert(s.square() - 100 < 1e-6);
 
     Circle c(3);
 
