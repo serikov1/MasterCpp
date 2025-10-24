@@ -98,5 +98,12 @@ int main()
     assert(shapes[2]->perimeter() - 18.849 < 1e-3);
     assert(shapes[2]->area() - 28.274 < 1e-3);
 
+    for (auto ptr : shapes)
+    {
+        delete ptr;
+    }
+
+    shapes.clear();
+
     return 0;
 }
