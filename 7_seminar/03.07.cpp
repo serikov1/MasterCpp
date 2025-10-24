@@ -206,9 +206,16 @@ int main()
 {
     Vector vector_1;
 
+	assert(vector_1.capacity() == 0);
+
     vector_1.push_back(10);
+	assert(vector_1.capacity() == 1);
+
     vector_1.push_back(20);
+	assert(vector_1.capacity() == 2);
+
     vector_1.push_back(30);
+	assert(vector_1.capacity() == 4);
 
 	assert(vector_1.empty() == false);
 	assert(vector_1.size() == 3);
