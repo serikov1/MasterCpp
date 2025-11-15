@@ -12,6 +12,17 @@ int nod(int a, int b)
     return nod(b, a % b);
 }
 
+int nod_iterative(int a, int b)
+{
+    while (b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
 int nok(int a, int b)
 {
     if(a == 0 || b == 0)
@@ -27,12 +38,13 @@ int main()
 
     for (auto &pair : data) {
         int my_gcd = nod(pair.first, pair.second);
+        int my_gcd2 = nod_iterative(pair.first, pair.second);
         int std_gcd = std::gcd(pair.first, pair.second);
 
         int my_lcm = nok(pair.first, pair.second);
         int std_lcm = std::lcm(pair.first, pair.second);
 
-        assert(my_gcd == std_gcd);
+        assert(my_gcd == my_gcd2 && my_gcd2 == std_gcd);
         assert(my_lcm == std_lcm);
     }
 
