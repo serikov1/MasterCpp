@@ -183,28 +183,30 @@ template < typename D > using max_type = typename Max_Type < D > ::type;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-template < typename T, typename D, bool = is_empty_v<D> >
-struct Has;
+template < typename T, typename D, bool = is_empty_v<D> > class Has;
 
-template < typename T, typename D >
-struct Has<T, D, true>
+template < typename T, typename D > class Has<T, D, true>
 {
+public:
+
     constexpr static bool value = false;
 };
 
-template < typename T, typename D >
-struct Has<T, D, false>
+template < typename T, typename D > class Has<T, D, false>
 {
 private:
+
     using current_t = front<D>;
     using rest = pop_front<D>;
+
 public:
+
     constexpr static bool value = std::is_same_v<T, current_t> || Has<T, rest>::value;
 };
 
-template < typename T, typename D >
-constexpr auto has_v = Has<T, D>::value;
+template < typename T, typename D > constexpr auto has_v = Has<T, D>::value;
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
