@@ -1,6 +1,5 @@
-// rational.cpp
 #include "rational.hpp"
-#include <numeric> // на всякий случай (std::lcm в operator+=)
+#include <numeric>
 
 Rational::Rational(int num, int den) : m_num(num), m_den(den)
 {
@@ -14,7 +13,6 @@ Rational::operator double() const
 
 Rational& Rational::operator+=(Rational const& other)
 {
-    // корректно вычисляем НОК и приводим числители
     auto l = std::lcm(m_den, other.m_den);
     m_num = m_num * (l / m_den) + other.m_num * (l / other.m_den);
     m_den = static_cast<int>(l);
@@ -25,12 +23,14 @@ Rational& Rational::operator+=(Rational const& other)
 void Rational::reduce()
 {
     if (m_den == 0) return;
-    if (m_den < 0) {
+    if (m_den < 0)
+    {
         m_num = -m_num;
         m_den = -m_den;
     }
     auto g = std::gcd(m_num, m_den);
-    if (g != 0) {
+    if (g != 0)
+    {
         m_num /= g;
         m_den /= g;
     }

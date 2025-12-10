@@ -1,0 +1,8 @@
+g++ -c -std=c++23 -fmodules-ts -Wall -Wextra -Wpedantic -O0 ./rational_s.cxx -o build/rational_s.o
+
+g++ -c -std=c++23 -fmodules-ts -Wall -Wextra -Wpedantic -O0 ./rational_h.cxx -o build/rational_h.o
+
+files="./main.cpp ./build/rational_h.o ./build/rational_s.o"
+
+g++    -std=c++23 -fmodules-ts -Wall -Wextra -Wpedantic -O0 $files -o build/rational.o
+
