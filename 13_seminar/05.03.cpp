@@ -123,13 +123,10 @@ int main() {
     squad.add(knight);
     squad.add(archer);
 
-    std::cout << "--- Knight turn ---\n";
     knight->takeTurn();
 
-    std::cout << "--- Archer turn ---\n";
     archer->takeTurn();
 
-    std::cout << "--- Squad turn ---\n";
     squad.takeTurn();
 
     delete knight;

@@ -26,26 +26,25 @@ sys     0m0,069s </br>
  77K дек 10 22:56 main.o </br>
  56K дек 10 23:00 rational.o </br>
 
- ## 06.01
+## 06.01
  
-  ## 06.01
 
 -- compile time for rational_s.cpp </br>
-real    0m0,216s
-user    0m0,191s
-sys     0m0,022s
+real    0m0,216s </br>
+user    0m0,191s </br>
+sys     0m0,022s </br>
 
 -- compile time for main.cpp </br>
-real    0m0,345s
-user    0m0,305s
-sys     0m0,039s
+real    0m0,345s </br>
+user    0m0,305s </br>
+sys     0m0,039s </br>
 
  -- link time </br>
-real    0m0,559s
-user    0m0,490s
-sys     0m0,070s
+real    0m0,559s </br>
+user    0m0,490s </br>
+sys     0m0,070s </br>
 
 -- files size </br>
- 76K дек 10 23:13 main.o
-6,2K дек 10 23:12 rational_s.o
- 49K дек 10 23:14 rational_test.o
+ 76K дек 10 23:13 main.o </br>
+6,2K дек 10 23:12 rational_s.o </br>
+ 49K дек 10 23:14 rational_test.o </br>
